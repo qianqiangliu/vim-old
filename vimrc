@@ -8,6 +8,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 syntax on
+filetype plugin indent on
 
 " Jump to last position
 autocmd BufReadPost *
@@ -32,6 +33,8 @@ set grepprg=rg\ --vimgrep
 set grepformat=%f:%l:%c:%m
 
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
+
+runtime! ftplugin/man.vim
 
 cmap <C-B> <LEFT>
 cmap <C-F> <RIGHT>
