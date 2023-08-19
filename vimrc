@@ -3,8 +3,6 @@ set mouse=v
 set tags=./.tags;,.tags
 set path+=**
 set wildmenu
-set cindent
-set smartindent
 set clipboard=unnamed
 set tabstop=4
 set shiftwidth=4

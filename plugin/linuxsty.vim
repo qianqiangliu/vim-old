@@ -42,8 +42,6 @@ function s:LinuxConfigure()
                 break
             endif
         endfor
-    else
-        let apply_style = 1
     endif
 
     if apply_style
