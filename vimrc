@@ -31,6 +31,7 @@ command! MakeTags call job_start(['ctags', '-R', '-f', '.tags'])
 
 set grepprg=rg\ --vimgrep
 set grepformat=%f:%l:%c:%m
+command! -nargs=+ Grep execute 'silent grep! <args>' | copen 16
 
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
