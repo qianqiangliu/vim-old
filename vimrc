@@ -28,7 +28,8 @@ let g:netrw_altv = 1
 
 " ctags
 function! MakeTags()
-    let s:job = job_start(['ctags', '-R', '-f', '.tags'])
+    let s:path = fnamemodify(expand('%:p'), ':h')
+    let s:job = job_start(['ctags', '-R', '-f', s:path . '/.tags', s:path])
 endfunction
 command! MakeTags call MakeTags()
 
