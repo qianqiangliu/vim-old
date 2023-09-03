@@ -27,11 +27,7 @@ let g:netrw_banner = 0
 let g:netrw_altv = 1
 
 " ctags
-function! MakeTags()
-    let s:path = fnamemodify(expand('%:p'), ':h')
-    let s:job = job_start(['ctags', '-R', '-f', s:path . '/.tags', s:path])
-endfunction
-command! MakeTags call MakeTags()
+command! MakeTags !ctags -R -f .tags
 
 set grepprg=rg\ --vimgrep
 set grepformat=%f:%l:%c:%m
