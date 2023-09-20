@@ -27,15 +27,17 @@ let g:netrw_banner = 0
 let g:netrw_altv = 1
 
 " ctags
-command! MakeTags !ctags -R -f .tags
+nnoremap <F4> :!ctags -R -f .tags<CR>
 
 set grepprg=rg\ --vimgrep
 set grepformat=%f:%l:%c:%m
-command! -nargs=+ Grep execute 'silent grep! <args>' | copen 16
 
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
 runtime! ftplugin/man.vim
+
+" Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 cmap <C-B> <LEFT>
 cmap <C-F> <RIGHT>
