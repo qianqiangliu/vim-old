@@ -39,3 +39,8 @@ cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
 cmap <C-B> <LEFT>
 cmap <C-F> <RIGHT>
+
+map th :tabnext<CR>
+map tl :tabprev<CR>
+map tn :tabnew<CR>
+map td :tabclose<CR>
