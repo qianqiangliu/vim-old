@@ -26,18 +26,16 @@ autocmd BufReadPost *
 let g:netrw_banner = 0
 let g:netrw_altv = 1
 
-" ctags
-nnoremap <F4> :!ctags -R -f .tags<CR>
-
-set grepprg=rg\ --vimgrep
-set grepformat=%f:%l:%c:%m
-
-cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
-
 runtime! ftplugin/man.vim
 
+" number
+nnoremap <F3> :set number! relativenumber!<CR>
+" ctags
+nnoremap <F4> :!ctags -R -f .tags<CR>
 " Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
 cmap <C-B> <LEFT>
 cmap <C-F> <RIGHT>
