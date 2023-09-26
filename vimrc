@@ -7,6 +7,8 @@ set clipboard=unnamed
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set number
+set relativenumber
 syntax on
 filetype plugin indent on
 
@@ -28,11 +30,11 @@ let g:netrw_altv = 1
 
 runtime! ftplugin/man.vim
 
-" number
+" Toggle number
 nnoremap <F3> :set number! relativenumber!<CR>
-" ctags
+" Make ctags
 nnoremap <F4> :!ctags -R -f .tags<CR>
-" Remove all trailing whitespace by pressing F5
+" Remove trailing whitespace
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
