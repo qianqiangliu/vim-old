@@ -36,7 +36,7 @@ nnoremap <F3> :set number! relativenumber!<CR>
 nnoremap <F4> :!ctags -R -f .tags<CR>
 " Remove trailing whitespace
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-
+" Expand '%%' to current path
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
 cmap <C-B> <LEFT>
