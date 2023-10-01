@@ -28,6 +28,9 @@ autocmd BufReadPost *
 let g:netrw_banner = 0
 let g:netrw_altv = 1
 
+" linuxsty
+let g:linuxsty_patterns = [ "/6.828/" ]
+
 runtime! ftplugin/man.vim
 
 " Toggle number
