@@ -24,6 +24,9 @@ autocmd BufReadPost *
   \ |   exe "LinuxCodingStyle"
   \ | endif
 
+" Line at center of window
+autocmd BufReadPost * exe "normal! zz"
+
 " netrw
 let g:netrw_banner = 0
 let g:netrw_altv = 1
