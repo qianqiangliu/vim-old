@@ -31,7 +31,7 @@ let g:netrw_banner = 0
 let g:netrw_altv = 1
 
 " linuxsty
-let g:linuxsty_patterns = [ "/6.828/" ]
+let g:linuxsty_patterns = [ "/linux", "/6.828/" ]
 
 runtime! ftplugin/man.vim
 
@@ -46,8 +46,3 @@ cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
 cmap <C-B> <LEFT>
 cmap <C-F> <RIGHT>
-
-map tn :tabnext<CR>
-map tp :tabprev<CR>
-map tw :tabnew<CR>
-map td :tabclose<CR>
