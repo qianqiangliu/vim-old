@@ -52,9 +52,14 @@ endfunction
 command! LinuxCodingStyle call s:LinuxCodingStyle()
 
 function! s:LinuxCodingStyle()
+    call s:LinuxSetTags()
     call s:LinuxFormatting()
     call s:LinuxKeywords()
     call s:LinuxHighlighting()
+endfunction
+
+function! s:LinuxSetTags()
+    setlocal tags=./tags;,tags
 endfunction
 
 function s:LinuxFormatting()

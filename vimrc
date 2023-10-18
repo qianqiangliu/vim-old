@@ -1,6 +1,6 @@
 set incsearch
 set mouse=v
-set tags+=./.tags;,.tags
+set tags=./.tags;,.tags
 set wildmenu
 set clipboard=unnamed
 set tabstop=4
