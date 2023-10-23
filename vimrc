@@ -5,9 +5,12 @@ set wildmenu
 set clipboard=unnamed
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 set expandtab
-set number
-set relativenumber
+set laststatus=2
+set statusline=%F\ %m\ %=\ 
+set statusline+=\ %{&fileencoding}
+set statusline+=\ \ %l:%L
 syntax on
 filetype plugin indent on
 
@@ -43,6 +46,8 @@ nnoremap <F4> :!ctags -R -f .tags<CR>
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " Expand '%%' to current path
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
+" Set StatusLine background and foreground
+highlight StatusLine ctermbg=white ctermfg=black
 
 cmap <C-B> <LEFT>
 cmap <C-F> <RIGHT>
