@@ -40,5 +40,6 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " Expand '%%' to current path
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
-cmap <C-B> <LEFT>
-cmap <C-F> <RIGHT>
+inoremap jk <Esc>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
