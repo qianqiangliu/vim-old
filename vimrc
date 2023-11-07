@@ -31,8 +31,6 @@ let g:linuxsty_patterns = [ "/linux", "/6.828/" ]
 
 runtime! ftplugin/man.vim
 
-" Toggle number
-nnoremap <F3> :set number! relativenumber!<CR>
 " Make ctags
 nnoremap <F4> :!ctags -R -f .tags<CR>
 " Remove trailing whitespace
@@ -40,6 +38,5 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " Expand '%%' to current path
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
-inoremap jk <Esc>
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
