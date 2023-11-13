@@ -45,6 +45,13 @@ autocmd BufEnter *
 " ack.vim
 let g:ackprg = 'rg --vimgrep'
 
+" vim-quickrun
+let g:quickrun_config = {
+  \   "_" : {
+  \       "outputter" : "message",
+  \   },
+  \ }
+
 runtime! ftplugin/man.vim
 
 " Make ctags
