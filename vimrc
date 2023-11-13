@@ -24,6 +24,7 @@ Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'skywind3000/asyncrun.vim'
 call plug#end()
 
 " netrw
@@ -46,7 +47,7 @@ let g:ackprg = 'rg --vimgrep'
 runtime! ftplugin/man.vim
 
 " Make ctags
-nnoremap <F4> :!ctags -R -f .tags<CR>
+nnoremap <F4> :AsyncRun ctags -R -f .tags<CR>
 " Expand '%%' to current path
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
