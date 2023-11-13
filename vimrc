@@ -16,25 +16,37 @@ autocmd BufReadPost *
   \ |   exe "normal! g`\""
   \ | endif
 
-" Linux kernel coding style
-autocmd BufReadPost *
-  \ if getline(1) =~ 'SPDX-License-Identifier:'
-  \ |   exe "LinuxCodingStyle"
-  \ | endif
+call plug#begin()
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'preservim/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+Plug 'ntpeters/vim-better-whitespace'
+call plug#end()
 
 " netrw
 let g:netrw_banner = 0
 let g:netrw_altv = 1
 
-" linuxsty
-let g:linuxsty_patterns = [ "/linux", "/6.828/" ]
+" airline
+let g:airline_powerline_fonts = 1
+
+" nerdtree
+let NERDTreeMinimalUI = 1
+autocmd BufEnter *
+  \ if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()
+  \ |   quit
+  \ | endif
+
+" ack.vim
+let g:ackprg = 'rg --vimgrep'
 
 runtime! ftplugin/man.vim
 
 " Make ctags
 nnoremap <F4> :!ctags -R -f .tags<CR>
-" Remove trailing whitespace
-nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " Expand '%%' to current path
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
