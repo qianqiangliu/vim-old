@@ -25,6 +25,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'thinca/vim-quickrun'
 call plug#end()
 
 " netrw
