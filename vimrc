@@ -7,6 +7,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set number
+set numberwidth=1
+set relativenumber
 syntax on
 filetype plugin indent on
 
@@ -17,7 +20,6 @@ autocmd BufReadPost *
   \ | endif
 
 call plug#begin()
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
@@ -25,7 +27,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'skywind3000/asyncrun.vim'
-Plug 'thinca/vim-quickrun'
 call plug#end()
 
 " netrw
@@ -44,13 +45,6 @@ autocmd BufEnter *
 
 " ack.vim
 let g:ackprg = 'rg --vimgrep'
-
-" vim-quickrun
-let g:quickrun_config = {
-  \   "_" : {
-  \       "outputter" : "message",
-  \   },
-  \ }
 
 runtime! ftplugin/man.vim
 
