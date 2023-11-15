@@ -20,14 +20,12 @@ autocmd BufReadPost *
   \ endif
 
 call plug#begin()
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'skywind3000/asyncrun.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'gregkh/kernel-coding-style'
+Plug 'tpope/vim-vinegar'
 call plug#end()
 
 " airline
@@ -45,7 +43,7 @@ autocmd BufReadPost *
 runtime! ftplugin/man.vim
 
 " Make ctags
-nnoremap <F4> :AsyncRun ctags -R -f .tags<CR>
+nnoremap <F4> :!ctags -R -f .tags<CR>
 " Expand '%%' to current path
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
