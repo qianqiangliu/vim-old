@@ -19,6 +19,12 @@ autocmd BufReadPost *
   \ |   exe "normal! g`\""
   \ | endif
 
+" Linux kernel coding style
+autocmd BufReadPost *
+  \ if getline(1) =~ 'SPDX-License-Identifier:' |
+  \   exe "LinuxCodingStyle" |
+  \ endif
+
 call plug#begin()
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
@@ -27,6 +33,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'gregkh/kernel-coding-style'
 call plug#end()
 
 " netrw
