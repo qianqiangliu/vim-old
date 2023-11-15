@@ -21,8 +21,8 @@ autocmd BufReadPost *
 
 call plug#begin()
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
-Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'ntpeters/vim-better-whitespace'
@@ -30,19 +30,8 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'gregkh/kernel-coding-style'
 call plug#end()
 
-" netrw
-let g:netrw_banner = 0
-let g:netrw_altv = 1
-
 " airline
 let g:airline_powerline_fonts = 1
-
-" nerdtree
-let NERDTreeMinimalUI = 1
-autocmd BufEnter *
-  \ if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-  \   quit |
-  \ endif
 
 " ack.vim
 let g:ackprg = 'rg --vimgrep'
