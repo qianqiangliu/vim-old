@@ -15,14 +15,8 @@ filetype plugin indent on
 
 " Jump to last position
 autocmd BufReadPost *
-  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-  \ |   exe "normal! g`\""
-  \ | endif
-
-" Linux kernel coding style
-autocmd BufReadPost *
-  \ if getline(1) =~ 'SPDX-License-Identifier:' |
-  \   exe "LinuxCodingStyle" |
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit' |
+  \   exe "normal! g`\"" |
   \ endif
 
 call plug#begin()
@@ -46,12 +40,18 @@ let g:airline_powerline_fonts = 1
 " nerdtree
 let NERDTreeMinimalUI = 1
 autocmd BufEnter *
-  \ if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()
-  \ |   quit
-  \ | endif
+  \ if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+  \   quit |
+  \ endif
 
 " ack.vim
 let g:ackprg = 'rg --vimgrep'
+
+" Linux kernel coding style
+autocmd BufReadPost *
+  \ if getline(1) =~ 'SPDX-License-Identifier:' |
+  \   exe "LinuxCodingStyle" |
+  \ endif
 
 runtime! ftplugin/man.vim
 
