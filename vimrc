@@ -34,11 +34,12 @@ let g:airline_powerline_fonts = 1
 " ack.vim
 let g:ackprg = 'rg --vimgrep'
 
-" Linux kernel coding style
+" kernel-coding-style
 autocmd BufReadPost *
   \ if getline(1) =~ 'SPDX-License-Identifier:' |
   \   exe "LinuxCodingStyle" |
   \ endif
+let g:linuxsty_patterns = [ "/linux" ]
 
 runtime! ftplugin/man.vim
 
