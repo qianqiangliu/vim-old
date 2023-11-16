@@ -1,5 +1,4 @@
 set incsearch
-set mouse=v
 set tags=./.tags;,.tags
 set wildmenu
 set clipboard=unnamed
@@ -26,6 +25,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'gregkh/kernel-coding-style'
 Plug 'tpope/vim-vinegar'
+Plug 'greymd/oscyank.vim'
 call plug#end()
 
 " airline
@@ -40,6 +40,9 @@ autocmd BufReadPost *
   \   exe "LinuxCodingStyle" |
   \ endif
 let g:linuxsty_patterns = [ "/linux" ]
+
+" oscyank.vim
+noremap <leader>y :Oscyank<cr>
 
 runtime! ftplugin/man.vim
 
