@@ -1,6 +1,4 @@
-set incsearch
 set tags=./.tags;,.tags
-set wildmenu
 set clipboard=unnamed
 set tabstop=4
 set shiftwidth=4
@@ -9,8 +7,6 @@ set expandtab
 set number
 set numberwidth=1
 set relativenumber
-syntax on
-filetype plugin indent on
 
 " Jump to last position
 autocmd BufReadPost *
@@ -19,12 +15,13 @@ autocmd BufReadPost *
   \ endif
 
 call plug#begin()
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'mileszs/ack.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'gregkh/kernel-coding-style'
-Plug 'tpope/vim-vinegar'
 Plug 'greymd/oscyank.vim'
 call plug#end()
 
@@ -44,7 +41,8 @@ let g:linuxsty_patterns = [ "/linux" ]
 " oscyank.vim
 noremap <leader>y :Oscyank<cr>
 
-runtime! ftplugin/man.vim
+autocmd InsertEnter * exe ":set nornu"
+autocmd InsertLeave * exe ":set rnu"
 
 " Make ctags
 nnoremap <F4> :!ctags -R -f .tags<CR>
