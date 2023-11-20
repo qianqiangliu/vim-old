@@ -1,4 +1,4 @@
-set tags=./.tags;,.tags
+set tags+=./.tags;,.tags
 set clipboard=unnamed
 set tabstop=4
 set shiftwidth=4
