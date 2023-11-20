@@ -8,6 +8,7 @@ set number
 set numberwidth=1
 set relativenumber
 set cursorline
+set bg=dark
 
 " Jump to last position
 autocmd BufReadPost *
