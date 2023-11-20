@@ -38,11 +38,6 @@ let g:ackprg = 'rg --vimgrep'
 " kernel-coding-style
 let g:linuxsty_patterns = [ "/linux" ]
 let g:linuxsty_save_path = 1
-" Enable LinuxCodingStyle when the first line has the ID
-autocmd BufReadPost *
-  \ if getline(1) =~ 'SPDX-License-Identifier:' |
-  \   exe "LinuxCodingStyle" |
-  \ endif
 
 " oscyank.vim
 noremap <leader>y :Oscyank<CR>
