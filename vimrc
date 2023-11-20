@@ -17,6 +17,7 @@ autocmd BufReadPost *
 call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'mileszs/ack.vim'
 Plug 'ntpeters/vim-better-whitespace'
@@ -46,9 +47,6 @@ autocmd InsertLeave * exe ":set rnu"
 
 " Make ctags
 nnoremap <F4> :!ctags -R -f .tags<CR>
-" Quickfix
-nnoremap ]q :cnext<CR>
-nnoremap [q :cprevious<CR>
 " Expand '%%' to current path
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
