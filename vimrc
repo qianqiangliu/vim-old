@@ -53,5 +53,7 @@ nnoremap <F4> :!ctags -R -f .tags<CR>
 " Expand '%%' to current path
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
+nnoremap <c-]> g<c-]>
+vnoremap <c-]> g<c-]>
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
