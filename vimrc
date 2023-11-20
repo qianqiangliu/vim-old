@@ -7,6 +7,7 @@ set expandtab
 set number
 set numberwidth=1
 set relativenumber
+set cursorline
 
 " Jump to last position
 autocmd BufReadPost *
@@ -24,6 +25,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'gregkh/kernel-coding-style'
 Plug 'greymd/oscyank.vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 " airline
@@ -33,14 +35,19 @@ let g:airline_powerline_fonts = 1
 let g:ackprg = 'rg --vimgrep'
 
 " kernel-coding-style
+let g:linuxsty_patterns = [ "/linux" ]
+let g:linuxsty_save_path = 1
+" Enable LinuxCodingStyle when the first line has the ID
 autocmd BufReadPost *
   \ if getline(1) =~ 'SPDX-License-Identifier:' |
   \   exe "LinuxCodingStyle" |
   \ endif
-let g:linuxsty_patterns = [ "/linux" ]
 
 " oscyank.vim
-noremap <leader>y :Oscyank<cr>
+noremap <leader>y :Oscyank<CR>
+
+" gruvbox
+colorscheme gruvbox
 
 autocmd InsertEnter * exe ":set nornu"
 autocmd InsertLeave * exe ":set rnu"
