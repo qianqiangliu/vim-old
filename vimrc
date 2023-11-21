@@ -48,8 +48,6 @@ colorscheme gruvbox
 autocmd InsertEnter * exe ":set nornu"
 autocmd InsertLeave * exe ":set rnu"
 
-" Make ctags
-nnoremap <F4> :!ctags -R -f .tags<CR>
 " Expand '%%' to current path
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
