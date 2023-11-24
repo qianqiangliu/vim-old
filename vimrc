@@ -50,6 +50,10 @@ autocmd InsertLeave * exe ":set rnu"
 
 " Expand '%%' to current path
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
+" List buffer
+nnoremap <c-n> :CtrlPBuffer<CR>
+" List MRU
+nnoremap <c-m> :CtrlPMRUFiles<CR>
 
 nnoremap <c-]> g<c-]>
 vnoremap <c-]> g<c-]>
